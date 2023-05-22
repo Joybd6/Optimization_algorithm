@@ -1,12 +1,13 @@
 # Description: This file contains the benchmark functions for the optimization algorithms
 # f1
+import numpy as np
 
 
 class Sphere():
     def __init__(self):
         self.name = "Sphere"
         self.dim = 30
-        self.range = (-100,100)
+        self.range = (-100, 100)
         self.opt_value = 0.00
         self.optimization = 'minimize'
 
@@ -25,7 +26,7 @@ class Schwefel_2_22():
         self.name = "Schwefel_2_22"
         self.dim = 30
         self.opt_value = 0.00
-        self.range = (-10,10)
+        self.range = (-10, 10)
         self.optimization = 'minimize'
 
     def get_algorithm(self):
@@ -49,7 +50,7 @@ class Schwefel_1_2():
         self.name = "Schwefel_1_2"
         self.dim = 30
         self.opt_value = 0.00
-        self.range = (-100,100)
+        self.range = (-100, 100)
         self.optimization = 'minimize'
 
     def get_algorithm(self):
@@ -70,7 +71,7 @@ class Rosenbrock():
         self.name = "Rosenbrock"
         self.dim = 30
         self.opt_value = 0.00
-        self.range = (-30,30)
+        self.range = (-30, 30)
         self.optimization = 'minimize'
 
     def get_algorithm(self):
@@ -94,7 +95,7 @@ class Step():
         self.name = "Step"
         self.dim = 30
         self.opt_value = 0.00
-        self.range = (-100,100)
+        self.range = (-100, 100)
         self.optimization = 'minimize'
 
     def get_algorithm(self):
@@ -125,17 +126,38 @@ class Quartic_with_noise():
         return quartic_with_noise_func
 
 # f8
-class Ackley():
+
+
+class Ackley:
     def __init__(self):
         self.name = "Ackley"
         self.dim = 30
-        self.opt_value = 0.00
+        self.opt_value = 0.0
         self.range = (-32, 32)
         self.optimization = 'minimize'
 
     def get_algorithm(self):
         def ackley_func(x):
-            res = -20*np.exp(-0.2*np.sqrt(1/len(x)*sum(i**2 for i in x))) - \
-                np.exp(1/len(x)*sum(np.cos(2*np.pi*i) for i in x))+20+np.exp(1)
+            res = -20 * np.exp(-0.2 * np.sqrt(1 / len(x) * sum(i ** 2 for i in x))) - \
+                np.exp(1 / len(x) * sum(np.cos(2 * np.pi * i)
+                       for i in x)) + 20 + np.exp(1)
             return res
         return ackley_func
+
+
+# f9
+
+
+class SumSquare():
+    def __init__(self):
+        self.name = "SumSquare"
+        self.dim = 30
+        self.opt_value = 0.00
+        self.range = (-10, 10)
+        self.optimization = 'minimize'
+
+    def get_algorithm(self):
+        def sum_square_func(x):
+            res = sum((i+1)*x[i]**2 for i in range(len(x)))
+            return res
+        return sum_square_func
