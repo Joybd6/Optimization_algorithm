@@ -4,7 +4,7 @@
 
 class Sphere():
     def __init__(self):
-        self.name = "Sphere
+        self.name = "Sphere"
         self.dim = 30
         self.range = (-100,100)
         self.opt_value = 0.00
@@ -22,6 +22,7 @@ class Sphere():
 
 class Schwefel_2_22():
     def __init__(self):
+        self.name = "Schwefel_2_22"
         self.dim = 30
         self.opt_value = 0.00
         self.range = (-10,10)
@@ -44,7 +45,8 @@ class Schwefel_2_22():
 
 
 class Schwefel_1_2():
-    def __init__(self, dim, opt_value):
+    def __init__(self):
+        self.name = "Schwefel_1_2"
         self.dim = 30
         self.opt_value = 0.00
         self.range = (-100,100)
@@ -64,7 +66,8 @@ class Schwefel_1_2():
 
 
 class Rosenbrock():
-    def __init__(self, dim, opt_value):
+    def __init__(self):
+        self.name = "Rosenbrock"
         self.dim = 30
         self.opt_value = 0.00
         self.range = (-30,30)
@@ -87,7 +90,8 @@ class Rosenbrock():
 
 
 class Step():
-    def __init__(self, dim, opt_value):
+    def __init__(self):
+        self.name = "Step"
         self.dim = 30
         self.opt_value = 0.00
         self.range = (-100,100)
@@ -106,6 +110,7 @@ class Step():
 
 class Quartic_with_noise():
     def __init__(self):
+        self.name = "Quartic_with_noise"
         self.dim = 30
         self.opt_value = 0.00
         self.range = (-100, 100)
@@ -122,6 +127,7 @@ class Quartic_with_noise():
 # f8
 class Ackley():
     def __init__(self):
+        self.name = "Ackley"
         self.dim = 30
         self.opt_value = 0.00
         self.range = (-32, 32)
